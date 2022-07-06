@@ -14,11 +14,11 @@ import java.util.UUID;
 
 @RequestMapping("api/v1/appointment")
 @RestController
-public class AppointmentContoller {
+public class AppointmentController {
 
     private AppointmentService appointmentService;
 
-    public AppointmentContoller(AppointmentService appointmentService) {
+    public AppointmentController(AppointmentService appointmentService) {
         this.appointmentService = appointmentService;
     }
 

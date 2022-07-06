@@ -18,8 +18,8 @@ public class Appointment {
     private String appointmentName;
     private String appointmentType;
     private String appointmentDescription;
-    private Timestamp startTime;
-    private Timestamp endTime;
+    private String startTime;
+    private String endTime;
     private String metaData;
 
 }

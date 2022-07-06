@@ -16,8 +16,8 @@ public class AppointmentServiceImpl implements AppointmentService {
                 .appointmentName("Sid")
                 .appointmentType("Dental")
                 .appointmentDescription("Dr.Smith")
-                .startTime(Timestamp.from(Instant.now()))
-                .endTime(Timestamp.from(Instant.now()))
+                .startTime("now")
+                .endTime("later")
                 .metaData("none")
                 .build();
     }
