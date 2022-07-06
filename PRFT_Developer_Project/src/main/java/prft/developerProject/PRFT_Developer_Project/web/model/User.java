@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Data
 @Builder
-public class userServices {
+public class User {
 
     private UUID userID;
     private String firstName;
@@ -17,7 +17,7 @@ public class userServices {
     private String emailID;
     private Long phoneNumber;
 
-    public userServices(UUID userID, String firstName, String lastName, String gender, Integer age, String emailID, Long phoneNumber) {
+    public User(UUID userID, String firstName, String lastName, String gender, Integer age, String emailID, Long phoneNumber) {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,6 +27,6 @@ public class userServices {
         this.phoneNumber = phoneNumber;
     }
 
-    public userServices() {
+    public User() {
     }
 }
