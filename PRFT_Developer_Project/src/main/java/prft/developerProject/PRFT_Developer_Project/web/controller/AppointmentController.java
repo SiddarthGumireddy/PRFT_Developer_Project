@@ -10,20 +10,16 @@ import prft.developerProject.PRFT_Developer_Project.web.model.Appointment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-
-@RequestMapping("api/v1/appointment")
+@RequestMapping("/api/v1/appointment")
 @RestController
 public class AppointmentController {
-
-    private AppointmentService appointmentService;
+    private final AppointmentService appointmentService;
     List<String> allUsers = new ArrayList<String>();
-
     public AppointmentController(AppointmentService appointmentService) {
         this.appointmentService = appointmentService;
     }
 
-    @GetMapping("/{appointmentID}")
+    @GetMapping({"/{appointmentID}"})
     public ResponseEntity<Appointment> getAppointment(@PathVariable("appointmentID") UUID appointmentID){
         return new ResponseEntity<>(appointmentService.getAppointmentByID(appointmentID), HttpStatus.OK);
     }
@@ -40,7 +36,7 @@ public class AppointmentController {
         Appointment newAppt = appointmentService.saveNewAppointment(appointment);
 
         HttpHeaders httpHeaders =  new HttpHeaders();
-        httpHeaders.add("Location", "api/v1/appointment" + newAppt.getAppointmentID().toString());
+        httpHeaders.add("Location", "/api/v1/appointment" + newAppt.getAppointmentID().toString());
 
         allUsers.add(newAppt.getAppointmentID().toString()); // adding user ID to allUsers
 
@@ -51,7 +47,6 @@ public class AppointmentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateAnAppointment(@PathVariable("appointmentID") UUID appointmentID, Appointment appointment, String apptValue, String apptKey){
         appointmentService.updateAppointment(appointmentID, appointment, apptValue, apptKey);
-
     }
 
     @DeleteMapping("/{appointmentID}")

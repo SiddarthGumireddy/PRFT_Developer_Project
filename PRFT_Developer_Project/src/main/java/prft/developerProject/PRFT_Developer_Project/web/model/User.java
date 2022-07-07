@@ -1,11 +1,15 @@
 package prft.developerProject.PRFT_Developer_Project.web.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class User {
 
@@ -16,17 +20,6 @@ public class User {
     private Integer age;
     private String emailID;
     private Long phoneNumber;
-
-    public User(UUID userID, String firstName, String lastName, String gender, Integer age, String emailID, Long phoneNumber) {
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.age = age;
-        this.emailID = emailID;
-        this.phoneNumber = phoneNumber;
     }
 
-    public User() {
-    }
-}
+
